@@ -30771,7 +30771,6 @@
 	
 	exports.default = function (props) {
 	  var artists = props.artists;
-	
 	  return _react2.default.createElement(
 	    'div',
 	    null,
@@ -30851,15 +30850,11 @@
 		_createClass(ArtistFilterForm, [{
 			key: 'render',
 			value: function render() {
+				console.log(this.state);
 				return _react2.default.createElement(
 					'form',
-					{ className: 'form-group', onSubmit: this.props.handleSubmit },
-					_react2.default.createElement('input', { className: 'form-control', name: 'post', type: 'text', onChange: this.props.handleChange }),
-					_react2.default.createElement(
-						'button',
-						{ type: 'submit', className: 'btn btn-default' },
-						'Search Artist'
-					)
+					{ className: 'form-group' },
+					_react2.default.createElement('input', { className: 'form-control', name: 'post', type: 'text', onChange: this.props.handleChange })
 				);
 			}
 		}]);
@@ -30880,7 +30875,7 @@
 					input: ''
 				};
 				_this2.handleChange = _this2.handleChange.bind(_this2);
-				_this2.handleSubmitWithStatefulReactComponent = _this2.handleSubmitWithStatefulReactComponent.bind(_this2);
+				// this.handleSubmitWithStatefulReactComponent = this.handleSubmitWithStatefulReactComponent.bind(this);
 				return _this2;
 			}
 	
@@ -30890,18 +30885,18 @@
 					console.log('from handleChange', evt.target.value);
 					this.setState({ input: evt.target.value });
 				}
-			}, {
-				key: 'handleSubmitWithStatefulReactComponent',
-				value: function handleSubmitWithStatefulReactComponent(evt) {
-					console.log('from handleSubmit', this.state.input);
-					evt.preventDefault();
-					var formInput = this.state.input;
-					this.props.handleSubmit(formInput);
-				}
+	
+				// handleSubmitWithStatefulReactComponent (evt) {
+				// 	console.log('from handleSubmit', this.state.input)
+				// 	evt.preventDefault();
+				// 	const formInput = this.state.input;
+				// 	this.props.handleSubmit(formInput);
+				// }
+	
 			}, {
 				key: 'render',
 				value: function render() {
-					return _react2.default.createElement(InnerComponent, { handleChange: this.handleChange, handleSubmit: this.handleSubmitWithStatefulReactComponent });
+					return _react2.default.createElement(InnerComponent, { handleChange: this.handleChange });
 				}
 			}]);
 	
@@ -30909,7 +30904,10 @@
 		}(_react2.default.Component);
 	}
 	
-	exports.default = ArtistFilterForm;
+	var StatefulForm = FormDecorator(ArtistFilterForm);
+	
+	exports.default = StatefulForm;
+	// export default ArtistFilterForm
 	
 	// <label htmlFor="post"></label>
 

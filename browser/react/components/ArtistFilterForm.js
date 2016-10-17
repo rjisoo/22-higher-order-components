@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 
 class ArtistFilterForm extends React.Component {
 
-
-
   render () {
   	console.log(this.state);
     return (

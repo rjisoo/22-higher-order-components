@@ -9,6 +9,7 @@ import isPlayingReducer from './isPlaying';
 import progressReducer from './progress';
 import selectedAlbumReducer from './selectedAlbum';
 import selectedArtistReducer from './selectedArtist';
+import playlistsReducer from './playlists';
 import songsReducer from './songs';
 
 export default combineReducers({
@@ -20,5 +21,6 @@ export default combineReducers({
   progress: progressReducer,
   selectedAlbum: selectedAlbumReducer,
   selectedArtist: selectedArtistReducer,
+  playlists: playlistsReducer,
   songs: songsReducer
 });

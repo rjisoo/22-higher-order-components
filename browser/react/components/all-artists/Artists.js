@@ -2,14 +2,14 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import StatefulForm from '../Form/ArtistFilterForm';
+import CreatePlaylistForm from '../playlist/CreatePlaylistForm';
 
 export default function (props) {
   const artists = props.artists;
   return (
     <div>
       <h3>Artists</h3>
-      <StatefulForm />
+      <CreatePlaylistForm />
         <div className="list-group">
           {
             artists.map(artist => (

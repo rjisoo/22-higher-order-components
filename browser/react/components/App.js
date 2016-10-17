@@ -1,7 +1,8 @@
 'use strict';
 
 import React from 'react';
-import Sidebar from './sidebar/Sidebar';
+import Sidebar from './playlist/PlaylistContainer';
+import FormContainer from './playlist/CreatePlaylistForm';
 import PlayerContainer from './player/PlayerContainer';
 
 export default function (props) {
